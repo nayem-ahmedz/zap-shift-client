@@ -25,13 +25,13 @@ overview details...
 
 ### Tools and Libraries
 - Google Fonts API: For stylish typography.
-<!-- - React Router: For routing between pages. -->
-<!-- - Lucide Icons: For scalable, vector-based icons. -->
+- React Router: For routing between pages.
+- React Icons
 
 ## Project Timeline
 - Created on: 24 Nov 2025
 - Completed on: -- 2025
-- Last updated on: 24 Nov 2025
+- Last updated on: 25 Nov 2025
 
 ## Installation Instructions
 To run the AppoVate application locally, follow these steps:

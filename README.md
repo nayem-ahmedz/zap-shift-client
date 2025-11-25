@@ -27,6 +27,8 @@ overview details...
 - Google Fonts API: For stylish typography.
 - React Router: For routing between pages.
 - React Icons
+- react-responsive-carousel
+- swiper : for sliding brand logos
 
 ## Project Timeline
 - Created on: 24 Nov 2025

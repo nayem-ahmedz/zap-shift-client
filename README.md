@@ -29,6 +29,7 @@ overview details...
 - React Icons
 - react-responsive-carousel
 - swiper : for sliding brand logos
+- React Leaflet : for maps intregation
 
 ## Project Timeline
 - Created on: 24 Nov 2025

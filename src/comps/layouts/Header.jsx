@@ -1,11 +1,14 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import Logo from "../shared/Logo";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function Header() {
     const NavLinks = <>
-        <li><NavLink className='text-base' to='/'>Home</NavLink></li>
-        <li><NavLink className='text-base' to='/about'>About</NavLink></li>
+        <li><NavLink className='text-base' to='/'>Services</NavLink></li>
+        <li><NavLink className='text-base' to='/coverage'>Coverage</NavLink></li>
+        <li><NavLink className='text-base' to='/about'>About Us</NavLink></li>
+        <li><NavLink className='text-base' to='/'>Pricing</NavLink></li>
+        <li><NavLink className='text-base' to='/'>Blog</NavLink></li>
         <li><NavLink className='text-base' to='/contact'>Contact</NavLink></li>
     </>;
     return (
@@ -31,11 +34,11 @@ export default function Header() {
                             </li> */}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">
+                    <Link to='/' className="btn btn-ghost text-xl">
                         {
                             <Logo />
                         }
-                    </a>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

@@ -9,11 +9,11 @@ const Reviews = lazy(() => import('../../comps/home/Reviews'));
 export default function HomePage(){
     return(
         <>
-            {/* <Banner />
+            <Banner />
             <WorkingStyle />
-            <Services /> */}
-            {/* <Brands /> */}
-            {/* <KeyFeatures /> */}
+            <Services />
+            <Brands />
+            <KeyFeatures />
             <Reviews />
         </>
     );

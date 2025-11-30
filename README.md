@@ -30,6 +30,8 @@ overview details...
 - react-responsive-carousel
 - swiper : for sliding brand logos
 - React Leaflet : for maps intregation
+- react-hook-form : for managing form states
+- firebase : authentication
 
 ## Project Timeline
 - Created on: 24 Nov 2025

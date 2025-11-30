@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 // import required modules
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 import { FaQuoteRight } from "react-icons/fa";
 
 export default function Reviews() {
@@ -55,6 +55,7 @@ export default function Reviews() {
                     grabCursor={true}
                     centeredSlides={true}
                     slidesPerView={'3'}
+                    loop={true}
                     coverflowEffect={{
                         rotate: 50,
                         stretch: 0,
@@ -62,8 +63,12 @@ export default function Reviews() {
                         modifier: 1,
                         slideShadows: true,
                     }}
+                    autoplay={{
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    }}
                     pagination={true}
-                    modules={[EffectCoverflow, Pagination]}
+                    modules={[Autoplay, EffectCoverflow, Pagination]}
                     className="mySwiper"
                 >
                     {

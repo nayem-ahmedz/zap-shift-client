@@ -1,10 +1,16 @@
+import { useLocation, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 
 export default function GoogleLogin() {
     const { continueWithGoogle } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleClick = () => {
         continueWithGoogle()
-          .then(result => console.log(result.user))
+          .then(result => {
+            console.log(result.user);
+            navigate(location.state || '/'); // redirect to desired page or root
+          })
           .catch(error => console.log(error));
     }
     return (

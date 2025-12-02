@@ -15,8 +15,8 @@ export default function Header() {
     </>;
     const handleLogout = () => {
         logoutUser()
-          .then(() => console.log('signout user'))
-          .catch(error => console.log(error));
+            .then(() => console.log('signout user'))
+            .catch(error => console.log(error));
     }
     return (
         <header className="pt-4 md:pt-8 px-2 md:px-4">
@@ -57,31 +57,34 @@ export default function Header() {
                 <div className="navbar-end gap-2 md:gap-3">
                     {
                         loading ? <span className="loading loading-spinner loading-lg mr-2"></span> :
-                            user ? <div className="dropdown dropdown-end">
-                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
-                                        <img src={user?.photoURL} alt={user?.displayName} />
+                            user ? <>
+                                <Link to='/rider-registration' className="btn text-base bg-primary">Be a Rider</Link>
+                                <div className="dropdown dropdown-end">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img src={user?.photoURL} alt={user?.displayName} />
+                                        </div>
                                     </div>
+                                    <ul
+                                        tabIndex="-1"
+                                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                        <li>
+                                            <a className="justify-between">
+                                                Profile
+                                                <span className="badge">New</span>
+                                            </a>
+                                        </li>
+                                        <li><a>Settings</a></li>
+                                        <li><button onClick={handleLogout}>Logout</button></li>
+                                    </ul>
                                 </div>
-                                <ul
-                                    tabIndex="-1"
-                                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                                    <li>
-                                        <a className="justify-between">
-                                            Profile
-                                            <span className="badge">New</span>
-                                        </a>
-                                    </li>
-                                    <li><a>Settings</a></li>
-                                    <li><button onClick={handleLogout}>Logout</button></li>
-                                </ul>
-                            </div> : <>
+                            </> : <>
                                 <Link to='/login' className="btn text-base">Sign In</Link>
-                                <Link to='/register' className="btn text-base bg-primary">Sign Up</Link>
+                                <Link to='/rider-registration' className="btn text-base bg-primary">Be a Rider</Link>
                                 <a className="btn text-base btn-ghost bg-neutral text-white rounded-full p-0 w-10">
                                     <FaArrowRight className="text-xl -rotate-45" />
                                 </a>
-                        </>
+                            </>
                     }
                 </div>
             </nav>

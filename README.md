@@ -32,6 +32,7 @@ overview details...
 - React Leaflet : for maps intregation
 - react-hook-form : for managing form states
 - firebase : authentication
+- axios
 
 ## Project Timeline
 - Created on: 24 Nov 2025

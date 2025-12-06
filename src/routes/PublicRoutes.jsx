@@ -9,6 +9,8 @@ const Login = lazy(() => import('../pages/auth/Login'));
 const Register = lazy(() => import('../pages/auth/Register'));
 const RiderRegistration = lazy(() => import('../pages/public/RiderRegistration'));
 const SendParcel = lazy(() => import('../pages/customer/SendParcel'));
+const Dashboard = lazy(() => import('../layouts/Dashboard'));
+const MyParcels = lazy(() => import('../pages/customer/MyParcels'));
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +45,16 @@ export const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register />
+            }
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute> <Dashboard /> </PrivateRoute>,
+        children: [
+            {
+                path: 'my-parcels',
+                element: <MyParcels />
             }
         ]
     }

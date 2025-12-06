@@ -34,6 +34,7 @@ overview details...
 - firebase : authentication
 - axios
 - sweet alert 2
+- tanstack query : for state manageable fetch
 
 ## Project Timeline
 - Created on: 24 Nov 2025

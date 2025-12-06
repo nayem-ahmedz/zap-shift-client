@@ -12,6 +12,7 @@ export default function Header() {
         <li><NavLink className='text-base' to='/'>Pricing</NavLink></li>
         <li><NavLink className='text-base' to='/'>Blog</NavLink></li>
         <li><NavLink className='text-base' to='/contact'>Contact</NavLink></li>
+        <li><NavLink className='text-base' to='/send-parcel'>Send Parcel</NavLink></li>
     </>;
     const handleLogout = () => {
         logoutUser()

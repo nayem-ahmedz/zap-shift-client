@@ -6,7 +6,7 @@ export default function Public(){
     return(
         <>
             <Header />
-            <main className="containerr px-4">
+            <main className="containerr">
                 <Outlet />
             </main>
             <Footer />

@@ -33,6 +33,7 @@ overview details...
 - react-hook-form : for managing form states
 - firebase : authentication
 - axios
+- sweet alert 2
 
 ## Project Timeline
 - Created on: 24 Nov 2025

@@ -35,6 +35,8 @@ export default function SendParcel() {
                 cost = defaultCharge + extraCharge;
             }
         }
+        // add cost
+        data.cost = cost;
         Swal.fire({
             title: "Do you Agree with the cost?",
             text: `Courier charge is ${cost} taka`,

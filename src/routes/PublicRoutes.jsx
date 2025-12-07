@@ -11,6 +11,7 @@ const RiderRegistration = lazy(() => import('../pages/public/RiderRegistration')
 const SendParcel = lazy(() => import('../pages/customer/SendParcel'));
 const Dashboard = lazy(() => import('../layouts/Dashboard'));
 const MyParcels = lazy(() => import('../pages/customer/MyParcels'));
+const ParcelDetails = lazy(() => import('../pages/customer/ParcelDetails'));
 
 export const router = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
             {
                 path: 'my-parcels',
                 element: <MyParcels />
+            },
+            {
+                path: 'my-parcels/:parcelId',
+                element: <ParcelDetails />
             }
         ]
     }

@@ -13,13 +13,27 @@ export default function ParcelDetails(){
             return res.data;
         }
     });
-    // console.log(data);
+    const handlePay = async() => {
+        const parcelInfo = {
+            cost: data.cost,
+            parcelId: data._id,
+            senderEmail: data.senderEmail,
+            parcelName: data.parcelName
+        }
+        const response = await axiosSecure.post('/create-checkout-session', parcelInfo);
+        console.log(response.data);
+        window.location.href = response.data.url;
+    }
+    console.log(data);
     if(isPending){
         return <Loading />
     }
     return(
         <section className='p-4'>
-            <h1>Parcel: {data?.parcelName}</h1>
+            <h1>Parcel: {data?.parcelName} will cost taka {data.cost}</h1>
+            {
+                data.paymentStatus === 'paid' ? <p>Payment status: PAID, Tracking id {data.trackingId}</p> : <button onClick={handlePay} className="btn btn-primary mt-2 text-neutral">Pay</button>
+            }
         </section>
     );
 }

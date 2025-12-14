@@ -1,6 +1,8 @@
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
 import PrivateRoute from "./PrivateRoute";
+import PaymentSuccess from "../pages/customer/payment/PaymentSuccess";
+import PaymentCancelled from "../pages/customer/payment/PaymentCancelled";
 const PublicLayout = lazy(() => import('../layouts/Public'));
 const HomePage = lazy(() => import('../pages/public/HomePage'));
 const Coverage = lazy(() => import('../pages/public/Coverage'));
@@ -60,7 +62,15 @@ export const router = createBrowserRouter([
             {
                 path: 'my-parcels/:parcelId',
                 element: <ParcelDetails />
-            }
+            },
+            {
+                path: 'payment-success',
+                element: <PaymentSuccess />
+            },
+            {
+                path: 'payment-cancelled',
+                element: <PaymentCancelled />
+            },
         ]
     }
 ]);

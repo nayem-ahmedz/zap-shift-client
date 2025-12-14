@@ -75,6 +75,7 @@ export default function Header() {
                                                 <span className="badge">New</span>
                                             </a>
                                         </li>
+                                        <li> <Link to='/dashboard'>Dashboard</Link> </li>
                                         <li> <Link to='/dashboard/my-parcels'>My Parcels</Link> </li>
                                         <li><a>Settings</a></li>
                                         <li><button onClick={handleLogout}>Logout</button></li>

@@ -70,9 +70,9 @@ export default function MyParcels() {
                                 </td>
                                 <td>delivery status</td>
                                 <td className='space-x-2'>
-                                    <button className='btn'>
+                                    <Link to={`/dashboard/my-parcels/${parcel._id}`} className='btn'>
                                         <FaEye />
-                                    </button>
+                                    </Link>
                                     <button className='btn'>
                                         <FaEdit />
                                     </button>

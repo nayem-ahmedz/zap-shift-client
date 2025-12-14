@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router";
-import Logo from "../comps/shared/Logo";
-import AuthImage from '../assets/authImage.png';
+// import Logo from "../comps/shared/Logo";
+// import AuthImage from '../assets/authImage.png';
 import { TbTruckDelivery } from "react-icons/tb";
 
 export default function Dashboard() {

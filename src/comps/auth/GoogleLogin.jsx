@@ -1,15 +1,26 @@
 import { useLocation, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
+import useAxios from "../../hooks/useAxios";
 
 export default function GoogleLogin() {
     const { continueWithGoogle } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
+    const axiosSecure = useAxios();
     const handleClick = () => {
         continueWithGoogle()
           .then(result => {
             console.log(result.user);
-            navigate(location.state || '/'); // redirect to desired page or root
+            const user = {
+                name: result.user.displayName,
+                email: result.user.email,
+                photoURL: result.user.photoURL
+            };
+            axiosSecure.post('/users', user)
+              .then(res => {
+                console.log(res.data, user);
+                navigate(location.state || '/'); // redirect to desired page or root
+              })
           })
           .catch(error => console.log(error));
     }

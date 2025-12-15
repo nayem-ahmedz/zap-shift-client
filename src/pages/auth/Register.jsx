@@ -3,12 +3,14 @@ import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import GoogleLogin from "../../comps/auth/GoogleLogin";
 import axios from "axios";
+import useAxios from "../../hooks/useAxios";
 
 export default function Register() {
     const { registerUser, updateUserProfile } = useAuth();
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const location = useLocation();
+    const axiosSecure = useAxios();
     const handleRegistration = (data) => {
         const imageFile = data.photo[0];
         registerUser(data.email, data.password)
@@ -19,6 +21,12 @@ export default function Register() {
                     .then(res => {
                         updateUserProfile({ photoURL: res.data.data.url })
                             .then(() => {
+                                const user = {
+                                    name: data.name,
+                                    email: data.email,
+                                    photoURL: res.data.data.url
+                                };
+                                axiosSecure.post('/users', user);
                                 console.log('updated user image')
                                 navigate(location.state || '/');
                             })

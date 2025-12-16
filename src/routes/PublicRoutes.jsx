@@ -14,6 +14,7 @@ const SendParcel = lazy(() => import('../pages/customer/SendParcel'));
 const Dashboard = lazy(() => import('../layouts/Dashboard'));
 const MyParcels = lazy(() => import('../pages/customer/MyParcels'));
 const ParcelDetails = lazy(() => import('../pages/customer/ParcelDetails'));
+const ManageRiders = lazy(() => import('../pages/customer/ManageRiders'));
 
 export const router = createBrowserRouter([
     {
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/rider-registration',
+                loader: () => fetch('/data/warehouses.json').then(res => res.json()),
                 element: <PrivateRoute> <RiderRegistration /> </PrivateRoute>
             },
             {
@@ -70,6 +72,10 @@ export const router = createBrowserRouter([
             {
                 path: 'payment-cancelled',
                 element: <PaymentCancelled />
+            },
+            {
+                path: 'manage-riders',
+                element: <ManageRiders />
             },
         ]
     }

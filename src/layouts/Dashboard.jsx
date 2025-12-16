@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router";
 // import Logo from "../comps/shared/Logo";
 // import AuthImage from '../assets/authImage.png';
 import { TbTruckDelivery } from "react-icons/tb";
+import { GiFullMotorcycleHelmet } from "react-icons/gi";
 
 export default function Dashboard() {
     return (
@@ -42,7 +43,13 @@ export default function Dashboard() {
                             </Link>
                         </li>
 
-                        {/* List item */}
+                        <li>
+                            <Link to='/dashboard/manage-riders' className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Riders">
+                                <GiFullMotorcycleHelmet />
+                                <span className="is-drawer-close:hidden">Manage Riders</span>
+                            </Link>
+                        </li>
+
                         <li>
                             <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Settings">
                                 {/* Settings icon */}
